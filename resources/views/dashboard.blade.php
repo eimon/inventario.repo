@@ -1,3 +1,9 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -48,4 +54,20 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#inventario').DataTable({
+                "columnDefs": [{
+                        "targets": [10],
+                        "visible": true
+                    }
+                ],
+                dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5'
+                ]
+            });
+        });
+    </script>
+
 </x-app-layout>
