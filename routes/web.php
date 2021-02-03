@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComputadoraController;
+use App\Models\Computadora;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,13 @@ use App\Http\Controllers\ComputadoraController;
 
 Route::get('/', [ComputadoraController::class, 'show'])->middleware(['auth'])->name('dashboard');
 
+Route::get('/edit/{id}', [ComputadoraController::class, 'edit'])->middleware(['auth'])->name('edit');
+
 Route::get('/create', function () {
     return view('computadoras.create');
 })->middleware(['auth'])->name('create');
 
-Route::get('/store', [ComputadoraController::class, 'store']);
+Route::post('/store', [ComputadoraController::class, 'store'])->middleware(['auth'])->name('store');
+Route::post('/update', [ComputadoraController::class, 'update'])->middleware(['auth'])->name('update');
 
 require __DIR__.'/auth.php';

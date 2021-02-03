@@ -2,6 +2,13 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/cr-1.5.3/r-2.2.7/datatables.min.js"></script>
+
+
+<script src="https://kit.fontawesome.com/68457ff3e4.js" crossorigin="anonymous"></script>
+
+
+
 
 
 <x-app-layout>
@@ -30,6 +37,11 @@
                                 <th>HDD</th>
                                 <th>SSD</th>
                                 <th>Monitor</th>
+                                <th>SN Gabinete</th>
+                                <th>SN Monitor</th>
+                                <th>Inventario Gabinete</th>
+                                <th>Inventario Monitor</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +58,11 @@
                                 <td>{{ $computadora->hdd }}</td>
                                 <td>{{ $computadora->ssd }}</td>
                                 <td>{{ $computadora->monitor }}</td>
+                                <td>{{ $computadora->snGabinete }}</td>
+                                <td>{{ $computadora->snMonitor }}</td>
+                                <td>{{ $computadora->inventarioGabinete }}</td>
+                                <td>{{ $computadora->inventarioMonitor }}</td>
+                                <td><a href="{{ route('edit', $computadora->id) }}"><i class="fas fa-edit"></i></a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -57,14 +74,13 @@
     <script>
         $(document).ready(function() {
             $('#inventario').DataTable({
-                "columnDefs": [{
-                        "targets": [10],
-                        "visible": true
-                    }
-                ],
-                dom: 'Bfrtip',
+                "dom": 'Bfrtip',
+                "scrollX": true,
                 buttons: [
-                    'excelHtml5'
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
                 ]
             });
         });

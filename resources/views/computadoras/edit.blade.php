@@ -10,90 +10,91 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form class="p-5 card" action="{{ route('store') }}" method="post">
+                <form class="p-5 card" action="{{ route('update') }}" method="post">
                     @csrf
+                    <input id="id" name="id" type="hidden" value="{{ $computadora->id }}">
                     <div class="form-group row">
                         <label for="ubicacion" class="col-4 col-form-label">Ubicación</label>
                         <div class="col-8">
-                            <input id="ubicacion" name="ubicacion" type="text" class="form-control" required="required">
+                            <input id="ubicacion" name="ubicacion" type="text" class="form-control" required="required" value="{{ $computadora->ubicacion }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="area" class="col-4 col-form-label">Área</label>
                         <div class="col-8">
-                            <input id="area" name="area" type="text" class="form-control" required="required">
+                            <input id="area" name="area" type="text" class="form-control" required="required" value="{{ $computadora->area }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="mother" class="col-4 col-form-label">Placa Madre</label>
                         <div class="col-8">
-                            <input id="mother" name="mother" type="text" class="form-control" required="required">
+                            <input id="mother" name="mother" type="text" class="form-control" required="required" value="{{ $computadora->mother }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="cpu" class="col-4 col-form-label">Procesador</label>
                         <div class="col-8">
-                            <input id="cpu" name="cpu" type="text" class="form-control" required="required">
+                            <input id="cpu" name="cpu" type="text" class="form-control" required="required" value="{{ $computadora->cpu }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="ram" class="col-4 col-form-label">Memoria RAM</label>
                         <div class="col-8">
-                            <input id="ram" name="ram" type="text" class="form-control" required="required">
+                            <input id="ram" name="ram" type="text" class="form-control" required="required" value="{{ $computadora->ram }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="vga" class="col-4 col-form-label">Placa de video</label>
                         <div class="col-8">
-                            <input id="vga" name="vga" type="text" class="form-control" required="required">
+                            <input id="vga" name="vga" type="text" class="form-control" required="required" value="{{ $computadora->vga }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="hdd" class="col-4 col-form-label">Disco Rígido</label>
                         <div class="col-8">
-                            <input id="hdd" name="hdd" type="text" class="form-control" required="required">
+                            <input id="hdd" name="hdd" type="text" class="form-control" required="required" value="{{ $computadora->hdd }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="ssd" class="col-4 col-form-label">Disco Sólido</label>
                         <div class="col-8">
-                            <input id="ssd" name="ssd" type="text" class="form-control" required="required">
+                            <input id="ssd" name="ssd" type="text" class="form-control" required="required" value="{{ $computadora->ssd }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="monitor" class="col-4 col-form-label">Monitor</label>
                         <div class="col-8">
-                            <input id="monitor" name="monitor" type="text" class="form-control" required="required">
+                            <input id="monitor" name="monitor" type="text" class="form-control" required="required" value="{{ $computadora->monitor }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="propietario" class="col-4 col-form-label">Usuario</label>
                         <div class="col-8">
-                            <input id="propietario" name="propietario" type="text" class="form-control" required="required">
+                            <input id="propietario" name="propietario" type="text" class="form-control" required="required" value="{{ $computadora->propietario }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="sn-gabinete" class="col-4 col-form-label">Número de serie Gabinete</label>
                         <div class="col-8">
-                            <input id="snGabinete" name="snGabinete" type="text" class="form-control" required="required">
+                            <input id="snGabinete" name="snGabinete" type="text" class="form-control" required="required" value="{{ $computadora->snGabinete }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="snMonitor" class="col-4 col-form-label">Número de serie Monitor</label>
                         <div class="col-8">
-                            <input id="snMonitor" name="snMonitor" type="text" class="form-control" required="required">
+                            <input id="snMonitor" name="snMonitor" type="text" class="form-control" required="required" value="{{ $computadora->snMonitor }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inventarioGabinete" class="col-4 col-form-label">Inventario gabinete</label>
                         <div class="col-8">
-                            <input id="inventarioGabinete" name="inventarioGabinete" type="text" class="form-control" required="required">
+                            <input id="inventarioGabinete" name="inventarioGabinete" type="text" class="form-control" required="required" value="{{ $computadora->inventarioGabinete }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inventarioMonitor" class="col-4 col-form-label">Inventario monitor</label>
                         <div class="col-8">
-                            <input id="inventarioMonitor" name="inventarioMonitor" type="text" class="form-control">
+                            <input id="inventarioMonitor" name="inventarioMonitor" type="text" class="form-control" value="{{ $computadora->inventarioMonitor }}">
                         </div>
                     </div>
                     <div class="form-group row">
